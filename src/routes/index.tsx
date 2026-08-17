@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "An educational prototype that makes learning about glucose friendly, interactive and personalized.",
+          "SugarBuddy helps children understand glucose readings, trends and food choices with an AI companion, games and personalized lessons.",
       },
     ],
   }),

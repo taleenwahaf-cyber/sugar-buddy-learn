@@ -83,16 +83,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "SugarBuddy is a friendly AI companion that helps children understand glucose readings, trends and food.",
+          "SugarBuddy helps children understand glucose readings, trends and food choices with an AI companion, games and personalized lessons.",
       },
       { name: "author", content: "SugarBuddy" },
       { property: "og:title", content: "SugarBuddy — AI glucose learning buddy for kids" },
       {
         property: "og:description",
-        content: "Educational prototype combining AI, gamification and personalized diabetes learning.",
+        content: "SugarBuddy helps children understand glucose readings, trends and food choices with an AI companion, games and personalized lessons.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "SugarBuddy — AI glucose learning buddy for kids" },
+      { name: "twitter:description", content: "SugarBuddy helps children understand glucose readings, trends and food choices with an AI companion, games and personalized lessons." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/8055ee44-5b38-42a9-afa6-0ff5142702c5" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/8055ee44-5b38-42a9-afa6-0ff5142702c5" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
