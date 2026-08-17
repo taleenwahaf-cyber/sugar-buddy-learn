@@ -1,7 +1,9 @@
 import { useI18n } from "@/lib/i18n";
 import { scenarios, type ScenarioKey } from "@/lib/data";
 
-const toneClasses: Record<string, { text: string; ring: string; chip: string }> = {
+import type { Tone } from "@/lib/data";
+
+const toneClasses: Record<Tone, { text: string; ring: string; chip: string }> = {
   stable: { text: "text-sugar-stable", ring: "ring-sugar-stable/30", chip: "bg-sugar-stable/15 text-sugar-stable" },
   low: { text: "text-sugar-low", ring: "ring-sugar-low/30", chip: "bg-sugar-low/15 text-sugar-low" },
   high: { text: "text-sugar-high", ring: "ring-sugar-high/30", chip: "bg-sugar-high/15 text-sugar-high" },
@@ -29,7 +31,7 @@ function Sparkline({ series, tone }: { series: number[]; tone: string }) {
 export function GlucoseCard({ scenarioKey }: { scenarioKey: ScenarioKey }) {
   const { t, tr } = useI18n();
   const sc = scenarios[scenarioKey];
-  const tone = toneClasses[sc.tone];
+  const tone = toneClasses[sc.tone as Tone];
 
   return (
     <section className={`card-soft ring-4 ${tone.ring} p-5`}>
