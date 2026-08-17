@@ -164,5 +164,25 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body);
+    background-image: var(--gradient-calm);
+    background-attachment: fixed;
   }
+
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+@utility card-soft {
+  border-radius: var(--radius-3xl);
+  background-color: var(--color-card);
+  box-shadow: var(--shadow-card);
+}
+
+@utility gradient-primary {
+  background-image: var(--gradient-primary);
 }
