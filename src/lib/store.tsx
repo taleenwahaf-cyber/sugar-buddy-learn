@@ -115,10 +115,13 @@ export function StoreProvider({ children }: { children: ReactNode }) {
 
   const value = useMemo<Ctx>(() => {
     const level = Math.max(1, Math.floor(state.points / 50) + 1);
-    const topics: Topic[] = ["glucose", "trend", "food"];
+    const topics = ["glucose", "trend", "food"] as const satisfies readonly Topic[];
     const accuracy = (t: Topic) =>
       state.stats[t].total === 0 ? 1 : state.stats[t].correct / state.stats[t].total;
-    const weakestTopic = topics.reduce((a, b) => (accuracy(b) < accuracy(a) ? b : a), topics[0]);
+    const weakestTopic: Topic = topics.reduce<Topic>(
+      (a, b) => (accuracy(b) < accuracy(a) ? b : a),
+      "trend",
+    );
 
     const awardBadge = (id: string) =>
       update((p) =>
