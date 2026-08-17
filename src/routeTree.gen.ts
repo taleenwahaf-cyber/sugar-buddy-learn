@@ -14,6 +14,7 @@ import { Route as ChatRouteImport } from './routes/chat'
 import { Route as FoodRouteImport } from './routes/food'
 import { Route as GameRouteImport } from './routes/game'
 import { Route as LearnRouteImport } from './routes/learn'
+import { Route as ParentRouteImport } from './routes/parent'
 import { Route as PlanRouteImport } from './routes/plan'
 
 const IndexRoute = IndexRouteImport.update({
@@ -41,6 +42,11 @@ const LearnRoute = LearnRouteImport.update({
   path: '/learn',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ParentRoute = ParentRouteImport.update({
+  id: '/parent',
+  path: '/parent',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PlanRoute = PlanRouteImport.update({
   id: '/plan',
   path: '/plan',
@@ -53,6 +59,7 @@ export interface FileRoutesByFullPath {
   '/food': typeof FoodRoute
   '/game': typeof GameRoute
   '/learn': typeof LearnRoute
+  '/parent': typeof ParentRoute
   '/plan': typeof PlanRoute
 }
 export interface FileRoutesByTo {
@@ -61,6 +68,7 @@ export interface FileRoutesByTo {
   '/food': typeof FoodRoute
   '/game': typeof GameRoute
   '/learn': typeof LearnRoute
+  '/parent': typeof ParentRoute
   '/plan': typeof PlanRoute
 }
 export interface FileRoutesById {
@@ -70,14 +78,23 @@ export interface FileRoutesById {
   '/food': typeof FoodRoute
   '/game': typeof GameRoute
   '/learn': typeof LearnRoute
+  '/parent': typeof ParentRoute
   '/plan': typeof PlanRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/chat' | '/food' | '/game' | '/learn' | '/plan'
+  fullPaths: '/' | '/chat' | '/food' | '/game' | '/learn' | '/parent' | '/plan'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/chat' | '/food' | '/game' | '/learn' | '/plan'
-  id: '__root__' | '/' | '/chat' | '/food' | '/game' | '/learn' | '/plan'
+  to: '/' | '/chat' | '/food' | '/game' | '/learn' | '/parent' | '/plan'
+  id:
+    | '__root__'
+    | '/'
+    | '/chat'
+    | '/food'
+    | '/game'
+    | '/learn'
+    | '/parent'
+    | '/plan'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -86,6 +103,7 @@ export interface RootRouteChildren {
   FoodRoute: typeof FoodRoute
   GameRoute: typeof GameRoute
   LearnRoute: typeof LearnRoute
+  ParentRoute: typeof ParentRoute
   PlanRoute: typeof PlanRoute
 }
 
@@ -126,6 +144,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LearnRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/parent': {
+      id: '/parent'
+      path: '/parent'
+      fullPath: '/parent'
+      preLoaderRoute: typeof ParentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/plan': {
       id: '/plan'
       path: '/plan'
@@ -142,6 +167,7 @@ const rootRouteChildren: RootRouteChildren = {
   FoodRoute: FoodRoute,
   GameRoute: GameRoute,
   LearnRoute: LearnRoute,
+  ParentRoute: ParentRoute,
   PlanRoute: PlanRoute,
 }
 export const routeTree = rootRouteImport
