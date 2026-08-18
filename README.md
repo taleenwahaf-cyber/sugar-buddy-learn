@@ -1,493 +1,226 @@
-# SugarBuddy Explorer
+# SugarBuddy
 
-Role
+A mobile-first, AI-powered educational web application designed to help children with diabetes better understand glucose readings, glucose trends, food choices, and basic diabetes concepts.
 
-You are a senior UX/UI designer, AI product designer, and full-stack web developer specializing in child-friendly health education applications.
+![SugarBuddy Badge](https://img.shields.io/badge/status-Educational%20Prototype-blue)
+![Mobile First](https://img.shields.io/badge/design-Mobile%20First-green)
+![AI Powered](https://img.shields.io/badge/AI-Enabled-purple)
+
+---
+
+## 🎯 Overview
+
+SugarBuddy addresses a critical gap in diabetes education for children by making complex glucose concepts accessible, interactive, and engaging. Rather than overwhelming kids with medical jargon, SugarBuddy uses **AI-powered explanations, gamification, and personalized learning** to build understanding at their pace.
+
+**The Problem:** Children with diabetes often struggle to understand what their glucose numbers mean, why trends matter, and how food affects their readings.
+
+**The Solution:** SugarBuddy transforms diabetes education into an interactive, child-friendly experience with an AI companion, educational games, and personalized learning paths.
+
+---
+
+## ✨ Features
+
+### 📊 Glucose Dashboard
+- **Current Glucose Reading:** Display glucose value with real-time trend arrow
+- **Status Indicators:** Visual feedback showing stable, rising, falling, low, or high readings
+- **Trend Sparkline:** 3-hour glucose history visualization
+- **Interactive Demo Scenarios:** Switch between different glucose scenarios to learn how readings change
+- **Simple Explanations:** Age-appropriate context for each glucose status
+
+### 🤖 SugarBuddy AI
+- **Interactive Chat Interface:** Ask questions about glucose, trends, and food
+- **Educational Responses:** AI-powered companion providing kid-friendly explanations
+- **Suggested Questions:** Quick-tap questions to guide learning
+- **Safe Guidance:** Directs to parents and care plans for medical decisions
+
+### 🎮 Glucose Detective Game
+- **Multi-Level Quiz:** Three difficulty levels (Easy, Medium, Hard)
+- **Interactive Learning:** Read glucose trends and arrows, make predictions
+- **Points & Scoring System:** Earn points for correct answers
+- **Progress Tracking:** Visual performance feedback
+
+### 🍎 Food Explorer
+- **Food Library:** Educational exploration of common foods and their carbohydrate content
+- **Categorized Foods:** Browse by food categories
+- **Carb Education:** Learn how carbohydrates affect glucose levels
+- **Custom Foods:** Parents can add household foods to personalize learning
+
+### 📚 Learn & Play
+- **Personalized Learning Path:** Adaptive recommendations based on performance
+- **Badges & Achievements:** Unlock badges for completed lessons
+- **Performance Tracking:** Track progress across glucose, trends, and food topics
+- **Progress Levels:** Visual level progression system
 
-Context
+### 👨‍👩‍👧 Parent Mode
+- **Learning Insights:** Review child's quiz accuracy and performance
+- **Performance Analytics:** Track points, levels, and topic mastery
+- **Progress Overview:** See completed lessons and learning history
+- **Food Library Access:** View all explored foods
+- **Care Plan Management:** Input and manage the child's personalized diabetes care plan
+
+### 💎 Gamification
+- **Points System:** Earn points through quiz completion and learning
+- **Level Progression:** Level up based on engagement and performance
+- **Badge Unlocking:** Achievement-based badges for milestones
+- **Encouragement Messages:** Personalized feedback and motivation
+
+### 🌍 Language Support
+- **English (LTR):** Full English interface
+- **Arabic (RTL):** Complete Arabic translation with proper right-to-left layout
+- **One-Click Language Toggle:** Easy switching between languages
+
+### 📱 Mobile-First Responsive Design
+- **Touch-Optimized Interface:** Designed for tablet and mobile devices
+- **Responsive Layout:** Adapts seamlessly to different screen sizes
+- **Accessibility-Focused:** Clear visual hierarchy and intuitive navigation
 
-Create a mobile-first web application called SugarBuddy.
+---
 
-SugarBuddy is an AI-powered educational companion designed to help children with diabetes better understand their glucose readings, glucose trends, food choices, and everyday diabetes-related concepts.
+## 🧠 How AI Is Used
 
-The goal is to make learning about glucose easier, less intimidating, and more interactive for children.
+### Educational Companion
+The SugarBuddy AI chatbot provides **instant, kid-friendly answers** to questions about:
+- What glucose numbers mean
+- How trend arrows work
+- Why blood sugar goes up or down
+- How food affects glucose
 
-The application should combine:
+### Personalized Learning
+The system **tracks performance** on quizzes and suggests what to learn next:
+- Identifies the weakest topic (glucose, trends, or food)
+- Recommends focused practice based on accuracy
+- Adapts difficulty progression
 
-AI
+### Interactive Questions
+Children learn through **guided questioning** in the Glucose Detective game, reinforcing concepts through active problem-solving rather than passive reading.
 
-Education
+---
 
-Gamification
+## 🛠️ Tech Stack
 
-Personalization
+| Technology | Purpose |
+|-----------|---------|
+| **React 18** | UI framework with TypeScript for type safety |
+| **TypeScript** | Static type checking and developer experience |
+| **TanStack Router** | Client-side routing and navigation |
+| **TanStack React Query** | Data fetching and state management |
+| **TanStack Start** | Full-stack framework with SSR support |
+| **Tailwind CSS** | Utility-first CSS styling |
+| **Radix UI** | Accessible, unstyled component primitives |
+| **Vite** | Lightning-fast build tool and dev server |
+| **Lucide Icons** | Clean, consistent icon library |
+| **LocalStorage** | Client-side data persistence |
+| **Hook Form + Zod** | Form handling and validation |
+| **i18n (Internationalization)** | Multi-language support (English/Arabic) |
+| **date-fns** | Date and time utilities |
 
-Interactive visualizations
+---
 
-The application is an educational prototype and must not replace a doctor, parent, glucose monitoring device, or personalized diabetes care plan.
+## 👥 User Flow
 
-Task
+### Child's Journey
+1. **Home Dashboard** → View current glucose and understand status
+2. **Ask SugarBuddy AI** → Ask questions about glucose concepts
+3. **Play Glucose Detective** → Learn through interactive quiz game
+4. **Explore Food Library** → Discover foods and carbs
+5. **Learn & Play** → Follow personalized lesson recommendations
+6. **Track Progress** → Earn badges and level up
 
-Build a fully functional mobile-first web application called SugarBuddy.
+### Parent's Journey
+1. **Access Parent Mode** → View child's learning dashboard
+2. **Review Performance** → Check quiz accuracy and progress
+3. **Manage Care Plan** → Input personalized diabetes instructions
+4. **Track Learning** → Monitor which topics were practiced
+5. **Add Custom Foods** → Personalize food library
 
-The application should feel like a real product, not a static landing page.
+---
 
-1. Home Dashboard
+## 🌐 Language Support
 
-Create a child-friendly dashboard displaying simulated glucose data.
+**SugarBuddy supports two languages:**
 
-Show:
+- **English** — Left-to-right (LTR) layout
+- **Arabic** — Right-to-left (RTL) layout with full translation
 
-Current glucose value
+Users can toggle languages at any time with a single click.
 
-Trend arrow
+---
 
-Glucose status
+## ⚠️ Safety & Disclaimer
 
-Simple explanation
+**SugarBuddy is an educational prototype** and is **not** a medical device or clinical tool.
 
-"What does this mean?"
+SugarBuddy:
+- ❌ Does **not** diagnose diabetes or any medical condition
+- ❌ Does **not** recommend insulin doses or medication changes
+- ❌ Does **not** provide independent medical advice or treatment decisions
+- ❌ Does **not** replace healthcare professionals, physicians, or endocrinologists
+- ❌ Does **not** replace continuous glucose monitors (CGM) or glucose meters
+- ❌ Does **not** replace a personalized diabetes management plan
 
-"Ask SugarBuddy AI"
+**Disclaimer:**
+> SugarBuddy is an educational prototype and does not replace medical advice or a personalized diabetes care plan.
 
-"Learn & Play"
+**Always:**
+- Consult with a pediatric endocrinologist or diabetes care team
+- Follow your personalized diabetes management plan
+- Use approved glucose monitoring devices
+- Involve parents and caregivers in all diabetes-related decisions
 
-"Food Explorer"
+---
 
-Example:
+## 📊 Project Status
 
-Glucose: 105 mg/dL
-Trend: → Stable
+**Educational Prototype / MVP**
 
-Use simulated data for the prototype.
+SugarBuddy is an active learning project in its prototype phase. Core educational features are implemented and functional. The application is suitable for learning and demonstration purposes.
 
-Allow the user to switch between different demo glucose scenarios:
+---
 
-Stable
+## 🚀 Future Improvements
 
-Rising
+- **Glucose Trend Predictions:** Teach children to predict future glucose trends
+- **Advanced Quiz Topics:** Expand quiz coverage beyond glucose, trends, and food
+- **Parent-Child Messaging:** Two-way communication between child and parent mode
+- **Offline Functionality:** Progressive Web App (PWA) support for offline learning
+- **Export & Reporting:** Generate PDF reports of learning progress for healthcare providers
+- **Guardian Communication:** Alerts and summaries for parents/caregivers
+- **Extended Language Support:** Additional languages beyond English and Arabic
+- **Real Data Integration:** Connect to glucose monitoring devices (with appropriate safety measures)
+- **Accessibility Enhancements:** Expanded support for screen readers and keyboard navigation
+- **Parent Dashboard Analytics:** More advanced insights for parents and educators
 
-Falling
+---
 
-Low
+## 📋 Organization / Reference
 
-High
+**SDAIA Academy**
+- GitHub: [https://github.com/SDAIAAcademy](https://github.com/SDAIAAcademy)
 
-Update the visual dashboard when the scenario changes.
+*Note: This project is created for educational purposes as part of the SDAIA Academy community. SDAIA does not officially endorse, sponsor, or maintain this project.*
 
-2. SugarBuddy AI
+---
 
-Create an interactive AI-style chat assistant called SugarBuddy AI.
+## 📜 License
 
-The child can ask educational questions such as:
+This project is created for **educational purposes**.
 
-"What does this number mean?"
+---
 
-"What does the arrow mean?"
+## 🤝 Contributing
 
-"Why can my sugar go up?"
+This is an educational prototype. For contributions, feedback, or questions, please refer to the project repository or contact the development team.
 
-"Can food affect my sugar?"
+---
 
-"Why do I need to check my sugar?"
+## 📞 Support
 
-The assistant should respond using simple, friendly, age-appropriate language.
+For more information about diabetes education or clinical guidance, please consult:
+- Your pediatric endocrinologist
+- Your diabetes care team
+- Your healthcare provider
+- Certified diabetes educator (CDE)
 
-The AI should focus on education and understanding.
+---
 
-For situations outside the child's normal range, guide the child toward their personalized diabetes plan and parent/caregiver instead of making independent medical decisions.
-
-Include suggested questions that the child can tap.
-
-3. Glucose Detective Game
-
-Create an interactive educational game.
-
-Show a glucose value and trend arrow.
-
-Example:
-
-82 mg/dL ↓
-
-Ask:
-
-"What do you notice?"
-
-Options:
-
-Going Up
-
-Going Down
-
-Staying Stable
-
-Give immediate feedback.
-
-Add:
-
-Score
-
-Progress
-
-Correct/incorrect feedback
-
-Encouraging messages
-
-Multiple difficulty levels
-
-Make the game visually engaging and simple.
-
-4. Food Explorer
-
-Create an interactive food library.
-
-Include example foods:
-
-Apple
-
-Milk
-
-Bread
-
-Rice
-
-Juice
-
-Dates
-
-Chocolate
-
-Sandwich
-
-For each food, display:
-
-Food name
-
-Image or icon
-
-Basic carbohydrate information
-
-Simple educational explanation about how carbohydrates can affect glucose
-
-Allow parents to add foods available at home.
-
-Allow children to explore foods through categories.
-
-Do not provide insulin dosage recommendations.
-
-5. Personalized Learning
-
-Create an AI-powered learning system.
-
-Track:
-
-Quiz results
-
-Completed lessons
-
-Frequently missed questions
-
-Learning progress
-
-Use this information to recommend what the child should practice next.
-
-Example:
-
-"You've practiced glucose numbers really well! Let's practice trend arrows next."
-
-If the child repeatedly gets trend questions wrong, recommend a short lesson about glucose trends.
-
-Make the learning experience adaptive.
-
-6. My Diabetes Plan
-
-Create a section called:
-
-My Diabetes Plan
-
-This section should contain personalized instructions entered by a parent/caregiver or healthcare professional.
-
-Allow the parent to configure:
-
-Personal instructions
-
-Approved quick-carb options
-
-Important reminders
-
-Parent/caregiver contact
-
-What the child should do when they need help
-
-The application must display these instructions to the child in a simplified format.
-
-Do not automatically generate medical treatment instructions.
-
-7. Parent Mode
-
-Create a separate Parent Mode.
-
-Show:
-
-Child learning progress
-
-Quiz performance
-
-Completed lessons
-
-Frequently practiced topics
-
-Food library
-
-Personalized plan
-
-Learning recommendations
-
-Keep Parent Mode more organized and informative than Child Mode.
-
-Use simulated demo data.
-
-8. Gamification
-
-Add simple gamification elements:
-
-Points
-
-Badges
-
-Progress levels
-
-Daily learning goals
-
-Achievement messages
-
-Example:
-
-"Glucose Detective — Level 2"
-
-"You got 8/10 questions correct!"
-
-Keep rewards educational rather than competitive.
-
-9. Language Support
-
-The application must support:
-
-English
-
-Arabic
-
-Add a visible language switcher.
-
-When Arabic is selected:
-
-Translate the entire interface
-
-Translate buttons
-
-Translate navigation
-
-Translate educational content
-
-Translate AI suggested questions
-
-Use proper RTL layout
-
-When English is selected:
-
-Use English throughout the interface
-
-Use proper LTR layout
-
-Make sure the language switch works across the entire application.
-
-Do not mix Arabic and English unnecessarily.
-
-Design Direction
-
-Create a modern, polished, mobile-first design.
-
-The application should feel like:
-
-A children's learning app + AI companion + simple health dashboard.
-
-Avoid making it look like a hospital or clinical system.
-
-Use:
-
-Large readable numbers
-
-Rounded cards
-
-Friendly icons
-
-Simple illustrations
-
-Progress bars
-
-Interactive elements
-
-Soft blue/purple/green visual palette
-
-Clean typography
-
-Plenty of whitespace
-
-Create a friendly mascot called:
-
-SugarBuddy
-
-The mascot should appear throughout the learning experience and provide encouragement.
-
-Child Mode
-
-Make it:
-
-Playful
-
-Simple
-
-Friendly
-
-Interactive
-
-Easy to understand
-
-Parent Mode
-
-Make it:
-
-Organized
-
-Clear
-
-More informative
-
-Less playful
-
-Technical Requirements
-
-Build this as a functional responsive web application.
-
-Requirements:
-
-Mobile-first responsive design
-
-Functional navigation
-
-Interactive buttons
-
-Working language switcher
-
-Arabic RTL support
-
-English LTR support
-
-Simulated glucose data
-
-Interactive glucose scenarios
-
-Functional AI-style chat interface
-
-Food library
-
-Personalized learning
-
-Mini-games
-
-Parent Mode
-
-Local/demo data storage
-
-Reusable components
-
-Smooth transitions and interactions
-
-Use realistic demo data so the application can be demonstrated immediately.
-
-Do not create unnecessary complexity that makes the prototype difficult to use.
-
-Prioritize a polished user experience.
-
-Safety Constraints
-
-This application is an educational prototype.
-
-It must NOT:
-
-Diagnose medical conditions
-
-Recommend insulin doses
-
-Recommend medication doses
-
-Make independent medical treatment decisions
-
-Replace healthcare professionals
-
-Replace glucose monitoring devices
-
-Replace a child's personalized diabetes care plan
-
-When the child encounters a concerning glucose scenario, the application should direct them to their configured personal plan and encourage contacting their parent/caregiver.
-
-Add this disclaimer:
-
-"SugarBuddy is an educational prototype and does not replace medical advice or a personalized diabetes care plan."
-
-Tone
-
-The overall experience should be:
-
-Friendly
-
-Encouraging
-
-Reassuring
-
-Educational
-
-Positive
-
-Child-friendly
-
-Modern
-
-The AI should never sound judgmental, frightening, or overly clinical.
-
-Use short and simple sentences for children.
-
-Final Goal
-
-Create a polished, functional MVP-level web application that demonstrates how AI can transform diabetes education for children.
-
-The core concept is:
-
-AI + Personalized Learning + Gamification + Diabetes Education
-
-The application should be impressive enough for a live classroom demonstration.
-
-Start by building the complete application rather than creating only a landing page or design mockup.
-
-This project was built with [Lovable](https://lovable.dev).
-
-**Live app**: https://sugar-buddy-learn.lovable.app
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/eed30bb0-bdaf-4486-9fab-bda061f491ad).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+**Made with ❤️ for children with diabetes and their families.**
