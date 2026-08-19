@@ -36,8 +36,10 @@ const chatInput = z.object({
 export const sendChatMessage = createServerFn({ method: "POST" })
   .validator((data: unknown) => chatInput.parse(data))
   .handler(async ({ data }) => {
-    const apiKey = process.env.OPENAI_API_KEY;
-    if (!apiKey || apiKey === "your_api_key_here") {
+    const apiKey = process.env.OPENAI_API_KEY?.trim();
+    const model = process.env.OPENAI_MODEL?.trim() || "gpt-4o-mini";
+    const placeholderKeys = new Set(["your_api_key_here", "your_new_openai_api_key_here"]);
+    if (!apiKey || placeholderKeys.has(apiKey)) {
       if (process.env.NODE_ENV !== "production") console.error("OPENAI_API_KEY is not configured.");
       throw new Error("Chat service is not configured.");
     }
@@ -45,13 +47,14 @@ export const sendChatMessage = createServerFn({ method: "POST" })
     try {
       const client = new OpenAI({ apiKey });
       const response = await client.responses.create({
-        model: "gpt-5.6",
+        model,
         instructions: SYSTEM_INSTRUCTIONS,
         input: data.messages.map((message) => ({
           role: message.role,
           content: message.text,
         })),
         store: false,
+        signal: AbortSignal.timeout(12_000),
       });
       const text = response.output_text.trim();
       if (!text) throw new Error("The AI returned an empty response.");
