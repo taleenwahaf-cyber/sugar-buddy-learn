@@ -1,25 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
-import OpenAI from "openai";
+import { streamText } from "ai";
 import { z } from "zod";
-
-const SYSTEM_INSTRUCTIONS = `You are SugarBuddy AI, a friendly educational companion for children learning about diabetes.
-
-Explain glucose, glucose trends, food, carbohydrates, and basic diabetes concepts using simple, short, age-appropriate language.
-
-Be encouraging and reassuring.
-
-You are an educational assistant, not a doctor.
-
-Never diagnose a medical condition.
-Never provide insulin dosage recommendations.
-Never provide medication dosage recommendations.
-Never make independent medical treatment decisions.
-
-If a user asks what they should do about a concerning glucose reading, direct them to their personalized diabetes care plan and encourage them to contact their parent, caregiver, or healthcare professional.
-
-Do not invent a personalized medical plan.
-Support both English and Arabic.
-Respond in the same language as the user's question.`;
+import { createLovableAiGatewayProvider, SYSTEM_INSTRUCTIONS } from "./ai-gateway.server";
 
 const chatInput = z.object({
   messages: z
@@ -34,35 +16,19 @@ const chatInput = z.object({
 });
 
 export const sendChatMessage = createServerFn({ method: "POST" })
-  .validator((data: unknown) => chatInput.parse(data))
+  .inputValidator((data: unknown) => chatInput.parse(data))
   .handler(async ({ data }) => {
-    const apiKey = process.env.OPENAI_API_KEY?.trim();
-    const model = process.env.OPENAI_MODEL?.trim() || "gpt-4o-mini";
-    const placeholderKeys = new Set(["your_api_key_here", "your_new_openai_api_key_here"]);
-    if (!apiKey || placeholderKeys.has(apiKey)) {
-      if (process.env.NODE_ENV !== "production") console.error("OPENAI_API_KEY is not configured.");
-      throw new Error("Chat service is not configured.");
-    }
+    const apiKey = process.env["LOVABLE_API_KEY"];
+    if (!apiKey) throw new Error("Chat service is not configured.");
 
-    try {
-      const client = new OpenAI({ apiKey });
-      const response = await client.responses.create({
-        model,
-        instructions: SYSTEM_INSTRUCTIONS,
-        input: data.messages.map((message) => ({
-          role: message.role,
-          content: message.text,
-        })),
-        store: false,
-        signal: AbortSignal.timeout(12_000),
-      });
-      const text = response.output_text.trim();
-      if (!text) throw new Error("The AI returned an empty response.");
-      return { text };
-    } catch (error) {
-      if (process.env.NODE_ENV !== "production") {
-        console.error("SugarBuddy AI request failed:", error);
-      }
-      throw new Error("Unable to get an AI response.");
-    }
+    const gateway = createLovableAiGatewayProvider(apiKey);
+    const result = streamText({
+      model: gateway("google/gemini-3.7-flash"),
+      system: SYSTEM_INSTRUCTIONS,
+      messages: data.messages.map((m) => ({ role: m.role, content: m.text })),
+    });
+
+    const text = (await result.text).trim();
+    if (!text) throw new Error("The AI returned an empty response.");
+    return { text };
   });
