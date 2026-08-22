@@ -8,14 +8,17 @@ A mobile-first, AI-powered educational web application designed to help children
 
 ---
 
-## 🎯 Overview
+🎯 Overview
 
-SugarBuddy addresses a critical gap in diabetes education for children by making complex glucose concepts accessible, interactive, and engaging. Rather than overwhelming kids with medical jargon, SugarBuddy uses **AI-powered explanations, gamification, and personalized learning** to build understanding at their pace.
+SugarBuddy is an AI-powered digital health companion designed to help children with diabetes understand their glucose readings, trends, and the impact of food in a simple and engaging way. The app connects children with their parents, allowing parents to remotely monitor glucose trends and receive alerts when a reading needs attention.
 
-**The Problem:** Children with diabetes often struggle to understand what their glucose numbers mean, why trends matter, and how food affects their readings.
+The Problem
 
-**The Solution:** SugarBuddy transforms diabetes education into an interactive, child-friendly experience with an AI companion, educational games, and personalized learning paths.
+Children may struggle to understand what their glucose readings mean, while parents cannot always be nearby to monitor them or guide them.
 
+The Solution
+
+SugarBuddy combines AI-powered education, personalized learning, gamification, and parent monitoring in one child-friendly experience. When a reading needs attention, the app can alert the parent and guide the child to their personalized care plan and parent-approved food options, while SugarBuddy AI provides simple educational guidance.
 ---
 
 ## ✨ Features
